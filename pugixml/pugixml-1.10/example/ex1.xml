@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Message>
+  <Header>
+    <Info>130998</Info>
+    <Type>做庄</Type>
+    <Time>2010-01-30 14:00:32.413</Time>
+  </Header>
+  <Log>
+<Record>
+<DaPai Name="North">北风</DaPai>
+<DaPai Name="South">南风</DaPai>
+<DaPai Name="East">东风</DaPai>
+<DaPai Name="Level">快出排</DaPai>
+<DaPai Name="Reason">消遣</DaPai>
+<DaPai Name="Tip">打麻将</DaPai>
+<Data>
+<Division>
+<Area Attach="水果">
+	<Place Line="1" KeyWord="西瓜">东旗</Place>
+	<Place Line="2" KeyWord="橙子">西旗</Place>
+	<Place Line="3" KeyWord="香蕉">南旗</Place>
+        <Place Line="3" KeyWord="香蕉">北旗</Place>
+</Area>
+<Area Attach="蔬菜">
+	<Place Line="11" KeyWord="土豆">东桥</Place>
+	<Place Line="12" KeyWord="土豆">西桥</Place>
+	<Place Line="13" KeyWord="土豆">南桥</Place>
+	<Place Line="14" KeyWord="土豆">北桥</Place>
+</Area>
+</Division>
+<Animal>
+	<Rare>稀有动物</Rare>
+	<Precious>国宝动物</Precious>
+	<Wild>野生动物</Wild>
+<Attach Total="100" Hit="50">
+	<Item SignName="老鼠" Hit="1">老大</Item>
+	<Item SignName="黄牛" Hit="2">老二</Item>
+	<Item SignName="老马" Hit="3">老三</Item>
+	<Item SignName="山羊" Hit="4">老四</Item>
+	<Item SignName="银虎" Hit="5">老五</Item>
+</Attach>
+</Animal>
+</Data>
+</Record>
+</Log>
+</Message>
+
