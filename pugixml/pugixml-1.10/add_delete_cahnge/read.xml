@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root id="s1">
+ <oldman name="yangxiaoben" age="80" weight="34" />
+ <guest>
+  <li>
+   <name>aa</name>
+   <age>11</age>
+  </li>
+  <li>
+   <name>bb</name>
+   <age>22</age>
+  </li>
+  <li>
+   <name>cc</name>
+   <age>33</age>
+  </li>
+ </guest>
+</root>

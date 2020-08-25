@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root id="info">
+ <person>
+  <age young="16" adult="30">minor</age>
+  <school city="beijing" home="shahe">qinghua</school>
+  <name>yangxiaoben</name>
+ </person>
+ <person>
+  <age young="16" adult="38">married</age>
+  <school city="hebie" home="shijiazhaung">qinghua</school>
+  <name>zhangsan</name>
+ </person>
+ <person>
+  <age young="100" adult="0">married</age>
+  <school city="dongbei" home="haerbin">hagongda</school>
+  <name>lisi</name>
+ </person>
+</root>
