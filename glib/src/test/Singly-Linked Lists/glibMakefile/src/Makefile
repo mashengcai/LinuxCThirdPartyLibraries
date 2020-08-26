@@ -17,8 +17,9 @@ CC      := g++
 RM 	  :=-rm  -fr
 
 #-L/home/path1   -L/home/path2   -L/home/path3 
-LIB_PATH:= -L$(ROOTDIR)/build/lib   `pkg-config --cflags --libs glib-2.0` 
-LIBLINK :=-lpthread  -lconfig
+#  `pkg-config --cflags --libs glib-2.0` 
+LIB_PATH:= -L$(ROOTDIR)/build/lib 
+LIBLINK :=-lpthread  -lconfig  -lglib-2.0
 LIBS    :=  $(LIBLINK)  $(LIB_PATH)
 
 #-I/home/include1   -L/home/include2   -L/home/include3 
