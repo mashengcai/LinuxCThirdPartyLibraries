@@ -1,0 +1,51 @@
+(1)
+[root@localhost ex01]# autoscan
+[root@localhost ex01]# mv configure.scan configure.ac
+[root@bogon autoconfig]# vim configure.ac  
+# -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+AC_PREREQ([2.69])
+AC_INIT(hello, 1.0, admin@163.com)
+#AM_INIT_AUTOMAKE(hello, 1.0)
+AM_INIT_AUTOMAKE
+AC_CONFIG_SRCDIR([hello.cpp])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+
+# Checks for libraries.
+# Checks for header files.
+# Checks for typedefs, structures, and compiler characteristics.
+# Checks for library functions.
+AC_OUTPUT(Makefile)
+
+(2)
+[root@localhost ex01]#aclocal
+(3)
+[root@localhost ex01]#autoconf
+(4)
+[root@localhost ex01]#autoheader
+(5)
+[root@localhost ex01]# vim Makefile.am
+AUTOMAKE_OPTIONS=foreign 
+bin_PROGRAMS=hello 
+hello_SOURCES=hello.cpp hello.h
+(6)
+[root@localhost ex01]# automake --add-missing
+(7)
+[root@localhost ex01]# ./configure
+[root@localhost ex01]# make
+[root@localhost ex01]# ./hello
+
+(8)
+[root@localhost ex01]# make dist
+
+(9)备注:
+转载请注明来源 : https://www.cnblogs.com/bugutian/p/5560548.html
+
+
+
+
+
