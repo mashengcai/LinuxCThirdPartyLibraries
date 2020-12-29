@@ -1,0 +1,15 @@
+[1]
+(&):&将指令丢到后台中去执行
+(node0=$!):接受值等于node0 槽信号
+(sleep 1):终端命令等1s进入后台
+
+./server node0 ipc:///tmp/pipeline.ipc & node0=$! && sleep 1
+
+[2]
+./client node1 ipc:///tmp/pipeline.ipc "Hello, World!"
+./client node1 ipc:///tmp/pipeline.ipc "Goodbye."
+
+[3]
+必须在同一终端下,即启动server的终端（跨终端不行）
+发送值为node0的信号,结束服务端
+kill $node0
