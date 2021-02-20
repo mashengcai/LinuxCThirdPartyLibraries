@@ -10,13 +10,10 @@
 <pre>
 //创建和获取 ipc 内核对象
 int msgget(key_t key, int flags);
-
 // 将消息发送到消息队列
 int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg);
-
 // 从消息队列获取消息
 ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp, int msgflg);
-
 // 查看、设置、删除 ipc 内核对象（用法和 shmctl 一样）
 int msgctl(int msqid, int cmd, struct msqid_ds *buf);
 
