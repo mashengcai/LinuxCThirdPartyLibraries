@@ -12,7 +12,7 @@ int main()
 {
 	int id = 0;
 	struct mymesg ckxmsg;
-	key_t key = ftok("/tmp",66);
+	key_t key = ftok("/tmp",0x42);
 	id = msgget(key,IPC_CREAT | 0666);
 	if(id == -1)
 	{
