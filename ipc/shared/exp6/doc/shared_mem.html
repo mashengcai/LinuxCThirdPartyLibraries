@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPC命令</title>
+</head>
+<body>
+ <h2>一、IPC命令</h2>
+ <h3>（一）ipcrm 命令</h3>
+ <pre>
+    <h6>用途</h6>
+    　　删除消息队列、信号集、或者共享内存标识。
+    <h6>语法</h6>
+    　　ipcrm [ -m SharedMemoryID ] [ -M SharedMemoryKey ] [ -q MessageID ] [ -Q MessageKey ] [ -s SemaphoreID ] [ -S SemaphoreKey ]
+    <h6>描述</h6>
+    　　ipcrm 命令删除一个或更多的消息队列、信号量集或者共享内存标识。
+    <h6>标志</h6>
+        -m  --SharedMemory ID 删除共享内存标识 SharedMemoryID。与 SharedMemoryID 有关联的共享内存段以及数据结构都会在最后一次拆离操作后删除。
+    　　-M  --SharedMemoryKey 删除用关键字 SharedMemoryKey 创建的共享内存标识。与其相关的共享内存段和数据结构段都将在最后一次拆离操作后删除。
+    　　-q  --MessageID 删除消息队列标识 MessageID 和与其相关的消息队列和数据结构。
+    　　-Q  --MessageKey 删除由关键字 MessageKey 创建的消息队列标识和与其相关的消息队列和数据结构。
+    　　-s  --SemaphoreID 删除信号量标识 SemaphoreID 和与其相关的信号量集及数据结构。
+    　　-S  --SemaphoreKey 删除由关键字 SemaphoreKey 创建的信号标识和与其相关的信号量集和数据结构。
+        msgctl、shmctl 和 semctl 子例程提供了删除操作的细节。标识和关键字可以用 ipcs 命令找到。
+    <h6>英文标志</h6>
+        
+        Usage:
+        ipcrm [options]
+        ipcrm shm|msg|sem <id>...
+
+        Remove certain IPC resources.
+
+        Options:
+        -m, --shmem-id <id>        remove shared memory segment by id
+        -M, --shmem-key <key>      remove shared memory segment by key
+        -q, --queue-id <id>        remove message queue by id
+        -Q, --queue-key <key>      remove message queue by key
+        -s, --semaphore-id <id>    remove semaphore by id
+        -S, --semaphore-key <key>  remove semaphore by key
+        -a, --all[=shm|msg|sem]    remove all (in the specified category)
+        -v, --verbose              explain what is being done
+
+        -h, --help     display this help and exit
+        -V, --version  output version information and exit
+
+
+    <h6>示例</h6>
+    　　如果要删除和 SharedMemoryID 18602 相关的共享内存段，请输入：
+    
+    　　ipcrm -m 18602
+ </pre>
+ <h3>（二）ipcs 命令</h3>
+ <pre>
+    IPCS(1)                          User Commands                         IPCS(1)
+
+    NAME
+           ipcs - show information on IPC facilities(报告进程间通信设施状态)
+    
+    SYNOPSIS
+           ipcs [options]
+    
+    DESCRIPTION
+           ipcs  shows  information  on the inter-process communication facilities
+           for which the calling process has read access.   By  default  it  shows
+           information  about all three resources: shared memory segments, message
+           queues, and semaphore arrays.
+    
+    OPTIONS
+           -i, --id id
+                  Show full details on just the one resource element identified by
+                  id.   This  option  needs  to  be combined with one of the three
+                  resource options: -m, -q or -s.
+    
+           -h, --help
+                  Display help text and exit.
+    
+           -V, --version
+                  Display version information and exit.
+    
+       Resource options
+           -m, --shmems
+                  Write information about active shared memory segments.
+    
+           -q, --queues
+                  Write information about active message queues.
+    
+           -s, --semaphores
+                  Write information about active semaphore sets.
+    
+           -a, --all
+                  Write information about all three resources (default).
+    
+       Output formats
+           Of these options only one takes effect: the last one specified.
+    
+           -c, --creator
+                  Show creator and owner.
+    
+           -l, --limits
+                  Show resource limits.
+    
+           -p, --pid
+                  Show PIDs of creator and last operator.
+    
+           -t, --time
+                  Write time information.  The time of the last control  operation
+                  that changed the access permissions for all facilities, the time
+                  of the last msgsnd() and msgrcv() operations on message  queues,
+                  the  time  of  the last shmat() and shmdt() operations on shared
+                  memory, and the time of the  last  semop()  operation  on  sema‐
+                  phores.
+    
+           -u, --summary
+                  Show status summary.
+    
+       Representation
+           These affect only the -l (--limits) option.
+    
+           -b, --bytes
+                  Print sizes in bytes.
+    
+           --human
+                  Print sizes in human-readable format.
+    
+    SEE ALSO
+           ipcrm(1),   ipcmk(1),   msgrcv(2),   msgsnd(2),   semget(2),  semop(2),
+           shmat(2), shmdt(2), shmget(2)
+    
+    CONFORMING TO
+           The Linux ipcs utility is not fully compatible to the POSIX ipcs  util‐
+           ity.   The  Linux  version  does  not  support  the POSIX -a, -b and -o
+           options, but does support the -l and -u options not defined  by  POSIX.
+           A  portable  application  shall  not  use  the  -a,  -b, -o, -l, and -u
+           options.
+    
+    AUTHOR
+           Krishna Balasubramanian ⟨balasub@cis.ohio-state.edu⟩
+    
+    AVAILABILITY
+           The ipcs command is part of the util-linux  package  and  is  available
+           from  Linux  Kernel Archive ⟨ftp://ftp.kernel.org/pub/linux/utils/util-
+           linux/⟩.
+    
+    util-linux                         July 2014                           IPCS(1)
+ </pre>
+</body>
+</html>
